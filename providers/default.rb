@@ -28,14 +28,14 @@ def do_remote_or_s3_file(resource_action)
     aws_s3_file new_resource.path do
       bucket bucket
       remote_path path
-      owner new_resource.owner
-      group new_resource.group
-      mode new_resource.mode
-      checksum new_resource.checksum
-      backup new_resource.backup
-      aws_access_key_id new_resource.aws_access_key_id
-      aws_secret_access_key new_resource.aws_secret_access_key
-      aws_session_token new_resource.aws_session_token
+      owner new_resource.owner unless new_resource.owner.nil?
+      group new_resource.group unless new_resource.group.nil?
+      mode new_resource.mode unless new_resource.mode.nil?
+      checksum new_resource.checksum unless new_resource.backup.nil?
+      backup new_resource.backup unless new_resource.backup.nil?
+      aws_access_key_id new_resource.aws_access_key_id unless new_resource.aws_access_key_id.nil?
+      aws_secret_access_key new_resource.aws_secret_access_key unless new_resource.aws_secret_access_key.nil?
+      aws_session_token new_resource.aws_session_token unless new_resource.aws_session_token.nil?
       action resource_action
     end
   else
