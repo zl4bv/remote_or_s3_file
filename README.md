@@ -10,7 +10,7 @@ use an `s3://...` uri, then the `remote_or_s3_file` will act like the
 
 ```ruby
 remote_or_s3_file 'example.zip' do
-  'http://example.com/example.zip'
+  source 'http://example.com/example.zip'
 end
 ```
 
@@ -18,6 +18,6 @@ Or from an S3 bucket
 
 ```ruby
 remote_or_s3_file 'example.zip' do
-  's3://example/example.zip'
+  source 's3://example/example.zip'
 end
 ```
