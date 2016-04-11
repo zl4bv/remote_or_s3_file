@@ -36,6 +36,7 @@ def do_remote_or_s3_file(resource_action)
       aws_access_key_id new_resource.aws_access_key_id unless new_resource.aws_access_key_id.nil?
       aws_secret_access_key new_resource.aws_secret_access_key unless new_resource.aws_secret_access_key.nil?
       aws_session_token new_resource.aws_session_token unless new_resource.aws_session_token.nil?
+      region new_resource.region unless new_resource.region.nil?
       action resource_action
     end
   else
